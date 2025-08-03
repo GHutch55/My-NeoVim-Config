@@ -8,4 +8,7 @@ vim.wo.number = true
 vim.diagnostic.config({ virtual_text = true })
 vim.keymap.set("n", "<C-s>", ":w<CR>", {})
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>o', '<C-w><C-w>', {})
+vim.keymap.set("n", "<leader>o", "<C-w><C-w>", {})
+vim.keymap.set("n", "[b", ":tabprev<CR>", {})
+vim.keymap.set("n", "]b", ":tabnext<CR>", {})
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", {})
