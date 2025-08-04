@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nhattVim/alpha-ascii.nvim",
     opts = { header = "gengar",
-      user_path = vim.fn.expand("~/AppData/Local/nvim/ascii")
+      user_path = vim.fn.expand("~/.config/nvim/ascii")
     },
   },
   config = function()
