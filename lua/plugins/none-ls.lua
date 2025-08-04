@@ -13,7 +13,6 @@ return {
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.diagnostics.pylint,
 				null_ls.builtins.formatting.black,
-				require("none-ls.diagnostics.eslint_d"),
 			},
 		})
 

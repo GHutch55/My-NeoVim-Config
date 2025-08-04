@@ -7,9 +7,10 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },  -- <--- Add this!
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "gopls", "jdtls", "ts_ls", "pylyzer", "lua_ls" },
+        ensure_installed = { "gopls", "jdtls", "vtsls", "pylyzer", "lua_ls", "eslint" },
       })
     end,
   },
@@ -19,21 +20,11 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.gopls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.jdtls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.pylyzer.setup({
-        capabilities = capabilities
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
+      lspconfig.gopls.setup({ capabilities = capabilities })
+      lspconfig.jdtls.setup({ capabilities = capabilities })
+      lspconfig.vtsls.setup({ capabilities = capabilities })
+      lspconfig.pylyzer.setup({ capabilities = capabilities })
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
@@ -42,3 +33,4 @@ return {
     end,
   },
 }
+
